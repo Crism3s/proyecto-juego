@@ -35,13 +35,18 @@ public class DifficultyManager : MonoBehaviour
     {
         closeMinigameButton.onClick.AddListener(() =>
         {
-            closeMinigameButton.GetComponent<TweenerUI>()
-            .Show()
-            .OnComplete(() =>
+            var tweener = closeMinigameButton.GetComponent<TweenerUI>();
+            if (tweener != null)
             {
-
+                tweener.Show().OnComplete(() =>
+                {
+                    onClick?.Invoke();
+                });
+            }
+            else
+            {
                 onClick?.Invoke();
-            });
+            }
         });
 
         return this;
@@ -51,13 +56,20 @@ public class DifficultyManager : MonoBehaviour
     {
         easyButton.onClick.AddListener(() =>
         {
-            easyButton.GetComponent<TweenerUI>()
-            .Show()
-            .OnComplete(() =>
+            var tweener = easyButton.GetComponent<TweenerUI>();
+            if (tweener != null)
+            {
+                tweener.Show().OnComplete(() =>
+                {
+                    difficulty = DifficultyEnum.Easy;
+                    onClick?.Invoke();
+                });
+            }
+            else
             {
                 difficulty = DifficultyEnum.Easy;
                 onClick?.Invoke();
-            });
+            }
         });
 
         return this;
@@ -67,13 +79,20 @@ public class DifficultyManager : MonoBehaviour
     {
         normalButton.onClick.AddListener(() =>
         {
-            normalButton.GetComponent<TweenerUI>()
-            .Show()
-            .OnComplete(() =>
+            var tweener = normalButton.GetComponent<TweenerUI>();
+            if (tweener != null)
+            {
+                tweener.Show().OnComplete(() =>
+                {
+                    difficulty = DifficultyEnum.Normal;
+                    onClick?.Invoke();
+                });
+            }
+            else
             {
                 difficulty = DifficultyEnum.Normal;
                 onClick?.Invoke();
-            });
+            }
         });
 
         return this;
@@ -83,13 +102,20 @@ public class DifficultyManager : MonoBehaviour
     {
         hardButton.onClick.AddListener(() =>
         {
-            hardButton.GetComponent<TweenerUI>()
-            .Show()
-            .OnComplete(() =>
+            var tweener = hardButton.GetComponent<TweenerUI>();
+            if (tweener != null)
+            {
+                tweener.Show().OnComplete(() =>
+                {
+                    difficulty = DifficultyEnum.Hard;
+                    onClick?.Invoke();
+                });
+            }
+            else
             {
                 difficulty = DifficultyEnum.Hard;
                 onClick?.Invoke();
-            });
+            }
         });
 
         return this;

@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3198413113446695736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardBackButton: {fileID: 1260127228996031253}
-  cardBackBackground: {fileID: 0}
+  cardBackBackground: {fileID: 2056407463992223893}
   cardFrontBackground: {fileID: 633481819593189166}
   cardFrontImage: {fileID: 4949064273810232005}
   cardBack: {fileID: 5895076018092410309}

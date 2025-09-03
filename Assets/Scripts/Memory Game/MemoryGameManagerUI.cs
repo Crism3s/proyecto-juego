@@ -9,10 +9,21 @@ public class MemoryGameManagerUI : MinigamesBase
 
     [SerializeField] private CardGroup cardGroup;
     [SerializeField] private List<CardSingleUI> cardSingleUIList = new List<CardSingleUI>();
+    [SerializeField] private GameObject gameArea;  // Referencia al área de juego
 
     private void Awake()
     {
         Instance = this;
+        
+        // Verificar si gameArea está asignado
+        if (gameArea == null)
+        {
+            gameArea = transform.Find("GameArea")?.gameObject;
+            if (gameArea == null)
+            {
+                Debug.LogError("Error: GameArea no está asignado en " + gameObject.name + ". Por favor, asígnalo en el Inspector.");
+            }
+        }
     }
 
     private void Start()
